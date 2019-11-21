@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Counting Valleys": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "OUTPUT_PATH": "output.txt"
+      }
+    }
+  }
+}
