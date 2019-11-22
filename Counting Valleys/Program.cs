@@ -6,27 +6,26 @@ namespace Counting_Valleys
     class Solution
     {
         // Complete the countingValleys function below.
-        static int countingValleys(int n, string s)
+        static int CountValleys(string steps)
         {
             int alt = 0;
-            int prevAlt = 0;
-            int zeroLevel = 0;
             int valleys = 0;
 
-            foreach (var step in s)
+            foreach (var step in steps)
             {
-                prevAlt = alt;
                 var direction = (step == 'U' || step == 'u')
                     ? 1
                     : -1;
 
-                alt += direction;
-
-                if (alt < zeroLevel && prevAlt < zeroLevel)
+                if (direction < 0 && alt == 0)
                 {
                     valleys++;
                 }
+
+                alt += direction;
             }
+
+            return valleys;
         }
 
         static void Main(string[] args)
@@ -37,7 +36,7 @@ namespace Counting_Valleys
 
             string s = Console.ReadLine();
 
-            int result = countingValleys(n, s);
+            int result = CountValleys(s);
 
             textWriter.WriteLine(result);
 
